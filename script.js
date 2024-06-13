@@ -21,6 +21,7 @@ function getHumanChoice(){
 
 let humanScore = 0;
 let computerScore = 0;
+let counter = 1;
 //method for play 1 round
 function playRound(humanChoice, computerChoice) {
     // your code here!
@@ -31,25 +32,32 @@ function playRound(humanChoice, computerChoice) {
     }else if ((humanChoice > computerChoice) | (humanChoice == 0 && computerChoice == 2)){
         console.log( "You Win! "+ choices[humanChoice] + " beats " + choices[computerChoice] + ".");
         humanScore++;
+        counter++;
     }else if ((humanChoice < computerChoice) | (humanChoice == 2 && computerChoice == 0)){
         console.log( "You Lose! "+ choices[computerChoice] + " beats " + choices[humanChoice] + ".");
         computerScore++;
+        counter++;
     }
 }
  
 function playGame(){
-    for(let i=1 ; i<= 5 ; i++){
+    while(counter <= 5){
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
-        console.log("ROUND " + (i) + " START!!!");
+        console.log("ROUND " + (counter) + " START!!!");
         playRound(humanSelection, computerSelection);
-        console.log("FINISHED ROUND " + i);
+        console.log("FINISHED ROUND " + (counter-1));
         console.log( "Human and Computer Score is "+ humanScore + " : " + computerScore);
     }
     console.log("Finished !!")
 }
 
-playGame();
+function updateScore(){
+    document.getElementById("humanScore").innerHTML = `Your score is: ${humanScore}`;
+    document.getElementById("computerScore").innerText = `Computer score is: ${computerScore}`;
+}
+
+updateScore();
 
 
 

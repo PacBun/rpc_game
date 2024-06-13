@@ -3,9 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
+  <title>Rock Paper Scrissor Game</title>
 </head>
 <body>
+  <div class="headerSection"> ROCK PAPER SCRISSORS GAME </div>
+  <div class="rulesSection">
+    <h2 class="rulesHeader">Rules</h2>
+    <ol class="rulesDescription">
+      <li>This game has 5 rounds except case of draw.</li>
+      <li>Fill one of the value below 
+        <ul>
+          <li>rock</li>
+          <li>paper</li>
+          <li>scrissors</li>
+        </ul>
+      </li>
+      <li>
+        The order follow below :
+        <ul>
+          <li>rock beat scrissors</li>
+          <li>scrissors beat paper</li>
+          <li>paper beat rock</li>
+        </ul>
+      </li>
+    </ol>
+  </div>
+  <div class="btnSection">
+    <button class="button1" onclick="playGame()">START</button>
+  </div>
+  <div>
+    <h1>SCOREBOARD</h1>
+    <h2 id="humanScore"></h2>
+    <h2 id="computerScore"></h2>
+  </div>
+  
   <script src="script.js"></script>
 </body>
 </html>
